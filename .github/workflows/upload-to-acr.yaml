@@ -38,12 +38,29 @@ jobs:
         run: |
           mvn -DskipTests clean package
 
+
+
+
+      - name: Upload OpenMetadata application
+        uses: actions/upload-artifact@v4
+        with:
+          name: openmetadata-dist
+          path: openmetadata-dist/target/*.tar.gz
+
+
+
   push_to_acr:
     runs-on: ubuntu-latest
     needs: [maven-build]
     steps:
       - name: Check out the Repo
         uses: actions/checkout@v4
+
+      - name: Download OpenMetadata application
+        uses: actions/download-artifact@v4
+        with:
+          name: openmetadata-dist
+          path: ./openmetadata-dist
 
       - name: Set build arguments
         id: build-args
@@ -67,5 +84,6 @@ jobs:
             ${{ inputs.push_latest_tag_to_release == 'true' && format('{0}/openmetadata/server:latest', secrets.ACR_LOGIN_SERVER) || '' }}
           file: ./docker/docker-compose-quickstart/Dockerfile
           build-args: |
+            RI_VERSION=${{ inputs.docker_release_tag }}
             BUILD_DATE=${{ steps.build-args.outputs.BUILD_DATE }}
             COMMIT_ID=${{ github.sha }}
