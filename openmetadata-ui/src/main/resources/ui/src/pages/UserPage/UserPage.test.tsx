@@ -28,9 +28,9 @@ import { UPDATED_USER_DATA, USER_DATA } from '../../mocks/User.mock';
 import { getUserByName, updateUserDetail } from '../../rest/userAPI';
 import UserPage from './UserPage.component';
 
-jest.mock('../../components/MyData/LeftSidebar/LeftSidebar.component', () =>
-  jest.fn().mockReturnValue(<p>Sidebar</p>)
-);
+// jest.mock('../../components/MyData/LeftSidebar/LeftSidebar.component', () =>
+//   jest.fn().mockReturnValue(<p>Sidebar</p>)
+// );
 
 const mockUpdateCurrentUser = jest.fn();
 const mockPush = jest.fn();

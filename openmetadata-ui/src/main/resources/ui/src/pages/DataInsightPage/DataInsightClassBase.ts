@@ -20,12 +20,12 @@ import { getDataInsightPathWithFqn } from '../../utils/DataInsightUtils';
 import i18n from '../../utils/i18next/LocalUtil';
 import KPIList from './KPIList';
 
-type LeftSideBarType = {
-  key: DataInsightTabs;
-  label: string;
-  icon: SvgComponent;
-  iconProps: React.SVGProps<SVGSVGElement>;
-};
+// type LeftSideBarType = {
+//   key: DataInsightTabs;
+//   label: string;
+//   icon: SvgComponent;
+//   iconProps: React.SVGProps<SVGSVGElement>;
+// };
 
 class DataInsightClassBase {
   public getLeftSideBar(): LeftSideBarType[] {

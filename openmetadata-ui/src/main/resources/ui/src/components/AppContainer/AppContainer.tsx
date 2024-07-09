@@ -27,7 +27,7 @@ import applicationRoutesClass from '../../utils/ApplicationRoutesClassBase';
 import Appbar from '../AppBar/Appbar';
 
 import { LimitBanner } from '../common/LimitBanner/LimitBanner';
-import LeftSidebar from '../MyData/LeftSidebar/LeftSidebar.component';
+// import LeftSidebar from '../MyData/LeftSidebar/LeftSidebar.component';
 import applicationsClassBase from '../Settings/Applications/AppDetails/ApplicationsClassBase';
 import './app-container.less';
 
@@ -61,13 +61,14 @@ const AppContainer = () => {
         className={classNames('app-container', {
           ['extra-banner']: Boolean(bannerDetails),
         })}>
-        <Sider
+        {/* <Sider
           className={classNames('left-sidebar-col', {
             'left-sidebar-col-rtl': isDirectionRTL,
           })}
           width={60}>
-          <LeftSidebar />
-        </Sider>
+          {/* <LeftSidebar /> */}
+        {/* </Sider> */} */
+        
         <Layout>
           <Header className="p-x-0">
             <Appbar />
