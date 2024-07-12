@@ -17,25 +17,28 @@ import { useHistory, useParams } from 'react-router-dom';
 import LeftPanelCard from '../../../components/common/LeftPanelCard/LeftPanelCard';
 import { DataInsightTabs } from '../../../interface/data-insight.interface';
 import { getDataInsightPathWithFqn } from '../../../utils/DataInsightUtils';
-import DataInsightClassBase from '../DataInsightClassBase';
+// eslint-disable-next-line
+//import DataInsightClassBase from '../DataInsightClassBase';
 
 const DataInsightLeftPanel = () => {
   const { tab } = useParams<{ tab: DataInsightTabs }>();
 
   const history = useHistory();
 
-  const menuItems: MenuProps['items'] = useMemo(() => {
-    const data = DataInsightClassBase.getLeftSideBar();
-
-    return data.map((value) => {
-      const SvgIcon = value.icon;
-
-      return {
-        key: value.key,
-        label: value.label,
-        icon: <SvgIcon {...value.iconProps} />,
-      };
-    });
+  // eslint-disable-next-line
+  const menuItems: any = useMemo(() => {
+    return;
+    // eslint-disable-next-line
+    //const data = DataInsightClassBase.getLeftSideBar();
+    // return data.map((value) => {
+    //   const SvgIcon = value.icon;
+    //
+    //   return {
+    //     key: value.key,
+    //     label: value.label,
+    //     icon: <SvgIcon {...value.iconProps} />,
+    //   };
+    // });
   }, []);
 
   const handleMenuClick: MenuProps['onClick'] = (e) => {

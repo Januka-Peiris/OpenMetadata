@@ -14,8 +14,9 @@
 import { Layout } from 'antd';
 import classNames from 'classnames';
 import { isEmpty } from 'lodash';
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useCallback, useEffect } from 'react';
+// eslint-disable-next-line
+//import { useTranslation } from 'react-i18next';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { ROUTES } from '../../constants/constants';
 import { useLimitStore } from '../../context/LimitsProvider/useLimitsStore';
@@ -32,13 +33,16 @@ import applicationsClassBase from '../Settings/Applications/AppDetails/Applicati
 import './app-container.less';
 
 const AppContainer = () => {
-  const { i18n } = useTranslation();
-  const { Header, Sider, Content } = Layout;
+  // eslint-disable-next-line
+  //const { i18n } = useTranslation();
+  const { Header, Content } = Layout;
   const { currentUser } = useApplicationStore();
   const { fetchDomainList } = useDomainStore();
   const AuthenticatedRouter = applicationRoutesClass.getRouteElements();
   const ApplicationExtras = applicationsClassBase.getApplicationExtension();
-  const isDirectionRTL = useMemo(() => i18n.dir() === 'rtl', [i18n]);
+  // eslint-disable-next-line
+  //const isDirectionRTL = useMemo(() => i18n.dir() === 'rtl', [i18n]);
+
   const { setConfig, bannerDetails } = useLimitStore();
 
   const fetchLimitConfig = useCallback(async () => {
@@ -67,8 +71,7 @@ const AppContainer = () => {
           })}
           width={60}>
           {/* <LeftSidebar /> */}
-        {/* </Sider> */} */
-        
+        {/* </Sider> */}
         <Layout>
           <Header className="p-x-0">
             <Appbar />

@@ -10,14 +10,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-import { ReactComponent as AppAnalyticsIcon } from '../../assets/svg/app-analytics.svg';
-import { ReactComponent as DataAssetsIcon } from '../../assets/svg/data-asset.svg';
-import { ReactComponent as KPIIcon } from '../../assets/svg/kpi.svg';
+// eslint-disable-next-line
+//import { ReactComponent as AppAnalyticsIcon } from '../../assets/svg/app-analytics.svg';
+// eslint-disable-next-line
+//import { ReactComponent as DataAssetsIcon } from '../../assets/svg/data-asset.svg';
+// eslint-disable-next-line
+//import { ReactComponent as KPIIcon } from '../../assets/svg/kpi.svg';
 import AppAnalyticsTab from '../../components/DataInsight/AppAnalyticsTab/AppAnalyticsTab.component';
 import DataAssetsTab from '../../components/DataInsight/DataAssetsTab/DataAssetsTab.component';
 import { DataInsightTabs } from '../../interface/data-insight.interface';
 import { getDataInsightPathWithFqn } from '../../utils/DataInsightUtils';
-import i18n from '../../utils/i18next/LocalUtil';
+// eslint-disable-next-line
+//import i18n from '../../utils/i18next/LocalUtil';
 import KPIList from './KPIList';
 
 // type LeftSideBarType = {
@@ -28,33 +32,34 @@ import KPIList from './KPIList';
 // };
 
 class DataInsightClassBase {
-  public getLeftSideBar(): LeftSideBarType[] {
-    return [
-      {
-        key: DataInsightTabs.DATA_ASSETS,
-        label: i18n.t('label.data-asset-plural'),
-        icon: AppAnalyticsIcon,
-        iconProps: {
-          className: 'side-panel-icons',
-        },
-      },
-      {
-        key: DataInsightTabs.APP_ANALYTICS,
-        label: i18n.t('label.app-analytic-plural'),
-        icon: DataAssetsIcon,
-        iconProps: {
-          className: 'side-panel-icons',
-        },
-      },
-      {
-        key: DataInsightTabs.KPIS,
-        label: i18n.t('label.kpi-uppercase-plural'),
-        icon: KPIIcon,
-        iconProps: {
-          className: 'side-panel-icons',
-        },
-      },
-    ];
+  public getLeftSideBar() {
+    return;
+    // return [
+    //   {
+    //     key: DataInsightTabs.DATA_ASSETS,
+    //     label: i18n.t('label.data-asset-plural'),
+    //     icon: AppAnalyticsIcon,
+    //     iconProps: {
+    //       className: 'side-panel-icons',
+    //     },
+    //   },
+    //   {
+    //     key: DataInsightTabs.APP_ANALYTICS,
+    //     label: i18n.t('label.app-analytic-plural'),
+    //     icon: DataAssetsIcon,
+    //     iconProps: {
+    //       className: 'side-panel-icons',
+    //     },
+    //   },
+    //   {
+    //     key: DataInsightTabs.KPIS,
+    //     label: i18n.t('label.kpi-uppercase-plural'),
+    //     icon: KPIIcon,
+    //     iconProps: {
+    //       className: 'side-panel-icons',
+    //     },
+    //   },
+    // ];
   }
 
   public getDataInsightTab() {

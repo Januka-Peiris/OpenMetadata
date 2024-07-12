@@ -39,6 +39,7 @@ import React, {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import logo from '../../assets/img/logo.png';
 import { ReactComponent as IconCloseCircleOutlined } from '../../assets/svg/close-circle-outlined.svg';
 import { ReactComponent as DropDownIcon } from '../../assets/svg/drop-down.svg';
 import { ReactComponent as IconBell } from '../../assets/svg/ic-alert-bell.svg';
@@ -136,13 +137,13 @@ const NavBar = ({
   };
 
   // const renderAlertCards = useMemo(() => {
-    // const cardList = popupAlertsCardsClassBase.alertsCards();
+  // const cardList = popupAlertsCardsClassBase.alertsCards();
 
-    // return cardList.map(({ key, component }) => {
-      // const Component = component;
+  // return cardList.map(({ key, component }) => {
+  // const Component = component;
 
-      // return <Component key={key} />;
-    // });
+  // return <Component key={key} />;
+  // });
   // }, []);
 
   const handleSupportClick = ({ key }: MenuInfo): void => {
@@ -357,6 +358,7 @@ const NavBar = ({
   return (
     <>
       <div className="navbar-container bg-white flex-nowrap w-full">
+        <img alt="logo" src={logo} style={{ width: '30px', height: '30px' }} />
         <div
           className="m-auto relative"
           data-testid="navbar-search-container"

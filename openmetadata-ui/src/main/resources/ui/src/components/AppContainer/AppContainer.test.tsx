@@ -10,11 +10,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { useDomainStore } from '../../hooks/useDomainStore';
-import { getLimitConfig } from '../../rest/limitsAPI';
+// eslint-disable-next-line
+//import { getLimitConfig } from '../../rest/limitsAPI';
 import AppContainer from './AppContainer';
 
 jest.mock('../../hooks/useApplicationStore', () => {
@@ -68,13 +69,12 @@ jest.mock('../../hooks/useDomainStore', () => ({
 //     expect(getLimitConfig).toHaveBeenCalled();
 //   });
 
-  it('should call domain list to cache domains', () => {
-    render(
-      <MemoryRouter>
-        <AppContainer />
-      </MemoryRouter>
-    );
+it('should call domain list to cache domains', () => {
+  render(
+    <MemoryRouter>
+      <AppContainer />
+    </MemoryRouter>
+  );
 
-    expect(useDomainStore().fetchDomainList).toHaveBeenCalled();
-  });
+  expect(useDomainStore().fetchDomainList).toHaveBeenCalled();
 });
